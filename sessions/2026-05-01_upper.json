@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-01",
+  "session_type": "upper_lift",
+  "title": "Upper / Pull-up Focus",
+  "exercises": [
+    {"name": "Lat pulldown", "sets": [{"reps": 6, "load_kg": 60}, {"reps": 6, "load_kg": 65}, {"reps": 6, "load_kg": 65}, {"reps": 6, "load_kg": 70}], "rpe_top": 8, "notes": "Top set 70kg — pull-up progress metric"},
+    {"name": "Chin-grip pulldown", "sets": [{"reps": 6, "load_kg": 45}, {"reps": 6, "load_kg": 45}, {"reps": 6, "load_kg": 50}]},
+    {"name": "Face pull", "sets": [{"reps": 15, "load_kg": 20}, {"reps": 15, "load_kg": 20}, {"reps": 15, "load_kg": 25}]},
+    {"name": "DB press (30 incline)", "sets": [{"reps": 8, "load_kg_per_hand": 14}, {"reps": 8, "load_kg_per_hand": 14}, {"reps": 8, "load_kg_per_hand": 16}, {"reps": 8, "load_kg_per_hand": 16}], "rpe_top": 9, "notes": "Top sets RPE 8-9 grinding"},
+    {"name": "One-arm DB row", "sets": [{"reps_per_arm": 8, "load_kg_per_hand": 16}, {"reps_per_arm": 8, "load_kg_per_hand": 18}, {"reps_per_arm": 8, "load_kg_per_hand": 20}, {"reps_per_arm": 8, "load_kg_per_hand": 20}], "notes": "Heavy but doable on top set"},
+    {"name": "Inverted row", "sets": [{"reps": 8}, {"reps": 8}, {"reps": 8}], "load": "bodyweight"},
+    {"name": "Farmer's carry", "sets": [{"distance_m": 40, "load_kg_per_hand": 24}, {"distance_m": 40, "load_kg_per_hand": 24}, {"distance_m": 40, "load_kg_per_hand": 24}], "notes": "First time doing them"},
+    {"name": "Pallof press", "sets": [{"reps_per_side": 15, "load_kg": 12.5}, {"reps_per_side": 15, "load_kg": 12.5}, {"reps_per_side": 15, "load_kg": 12.5}], "notes": "Replaced dead hang. Golf anti-rotation."}
+  ],
+  "pullup_progress_snapshot": {
+    "lat_pulldown_top_kg": 70,
+    "target_kg": 85,
+    "percent_to_goal": 82,
+    "estimated_weeks_to_first_pullup": "8-12"
+  }
+}

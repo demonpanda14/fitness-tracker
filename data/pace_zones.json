@@ -1,0 +1,21 @@
+{
+  "anchor": {
+    "race_pace_per_km": "6:50",
+    "race_distance_km": 10,
+    "target_finish_time": "68:20"
+  },
+  "zones": [
+    {"type": "recovery", "pace_per_km": "8:00-8:30", "delta_to_race_pace_sec": "+70 to +100", "purpose": "Active recovery, blood flow"},
+    {"type": "easy_z2", "pace_per_km": "7:30-8:00", "delta_to_race_pace_sec": "+40 to +70", "purpose": "Aerobic base, fat oxidation"},
+    {"type": "long_run_base", "pace_per_km": "7:15-7:30", "delta_to_race_pace_sec": "+25 to +40", "purpose": "Endurance, durability"},
+    {"type": "steady_aerobic", "pace_per_km": "7:05-7:15", "delta_to_race_pace_sec": "+15 to +25", "purpose": "Aerobic capacity"},
+    {"type": "threshold_tempo", "pace_per_km": "6:55-7:05", "delta_to_race_pace_sec": "-5 to +5", "purpose": "Lactate threshold"},
+    {"type": "race_pace", "pace_per_km": "6:50", "delta_to_race_pace_sec": "0", "purpose": "Race-day target", "per_400m": "2:44", "per_800m": "5:28"},
+    {"type": "cruise_interval", "pace_per_km": "6:45", "delta_to_race_pace_sec": "-5", "purpose": "Comfortable speed work"},
+    {"type": "vo2max", "pace_per_km": "6:35-6:45", "delta_to_race_pace_sec": "-5 to -15", "purpose": "Aerobic ceiling, 1K-2K reps"},
+    {"type": "intervals_400_800", "pace_per_km": "6:35-6:45", "delta_to_race_pace_sec": "-5 to -15", "purpose": "Speed buffer"},
+    {"type": "strides", "pace_per_km": "5:30", "purpose": "Neuromuscular, form, last 100m bursts"}
+  ],
+  "weekly_distribution_rule": "80/20 — 80% of weekly mileage easy (7:15+/km), 20% threshold or harder",
+  "common_mistake": "Running easy days too hard. Easy must feel almost embarrassingly slow."
+}

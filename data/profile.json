@@ -1,0 +1,48 @@
+{
+  "name": "Tawan",
+  "stats": {
+    "height_cm": 183,
+    "weight_kg": 105,
+    "feet": "flat and wide",
+    "running_pattern": "heel striker",
+    "training_age_years": "0-2 (serious strength training)"
+  },
+  "location": "Bangkok, Thailand",
+  "primary_goals_2026": [
+    {
+      "id": "pullup",
+      "title": "First unassisted pull-up",
+      "metric": "lat_pulldown_top_set_kg",
+      "current_value": 70,
+      "target_value": 85,
+      "unit": "kg x 6 reps",
+      "estimated_timeline": "8-12 weeks from May 7, 2026"
+    },
+    {
+      "id": "sub70_10k",
+      "title": "Sub-70 min 10K",
+      "race": "Asics META Time Trials Thailand 2026",
+      "race_date": "2026-08-16",
+      "race_location": "Bangkok",
+      "target_pace_per_km": "6:50",
+      "target_finish_time": "68:20",
+      "buffer_minutes": 1.67
+    },
+    {
+      "id": "golf_speed",
+      "title": "Improve golf performance",
+      "metric": "driver_clubhead_speed_mph",
+      "current_value": 95,
+      "target_value": null
+    }
+  ],
+  "constraints": {
+    "primary_bottleneck": "durability (posterior chain, knees, ankles given 105kg load)",
+    "deload_frequency_weeks": 4,
+    "deload_protocol": "drop weights ~20%, shorten runs ~30%"
+  },
+  "active_priorities": [
+    "macro tracking",
+    "sleep and recovery"
+  ]
+}

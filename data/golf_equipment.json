@@ -1,0 +1,32 @@
+{
+  "irons": {
+    "primary": {
+      "name": "Mizuno Pro M13",
+      "lie_angle": "0.5 degree more upright than Mizuno standard",
+      "modifications": "Factory tip weight removed, tape weight added at center-back CG",
+      "result": "Swing weights normalized to ~D2 across 5-9 irons; leftward ball flight reduced",
+      "next_action": "Flatten lie angle at least 0.5 degree to return to factory standard"
+    },
+    "secondary": {
+      "name": "Miura KM-700",
+      "lie_angle": "0.5 degree flatter than Miura standard",
+      "shafts": "DG S200 105g",
+      "issue": "Head weights running 1.7-4.5g lighter than published Miura specs (outside ±0.5g tolerance)",
+      "next_action": "Verify with Miura or fitter"
+    },
+    "alt": "Nike Vapor Fly Pro Combo"
+  },
+  "lie_angle_diff_M13_vs_KM700_degrees": 1.0,
+  "driver": {
+    "shaft": "Ventus Blue Velocore 5S",
+    "current_clubhead_speed_mph": 95
+  },
+  "ball": "Tour B RXS",
+  "potential_acquisitions": [
+    {
+      "name": "Nike VR Forged Pro Combo",
+      "purpose": "secondary/feel-focused use",
+      "look_for": "Made in Japan hosel stamp"
+    }
+  ]
+}

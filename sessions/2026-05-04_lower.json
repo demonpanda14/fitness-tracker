@@ -1,0 +1,16 @@
+{
+  "date": "2026-05-04",
+  "session_type": "lower_lift",
+  "title": "Lower Lift",
+  "exercises": [
+    {"name": "Trap-bar deadlift", "sets": [{"reps": 6, "load_kg": 60}, {"reps": 6, "load_kg": 60}, {"reps": 6, "load_kg": 70}, {"reps": 6, "load_kg": 80}], "notes": "Did 6s instead of 5s — volume day"},
+    {"name": "RDL", "sets": [{"reps": 6, "load_kg": 40}, {"reps": 6, "load_kg": 50}, {"reps": 6, "load_kg": 50}, {"reps": 6, "load_kg": 50}]},
+    {"name": "Bulgarian split squat", "sets": [{"reps_per_leg": 8, "load_kg_per_hand": 10}, {"reps_per_leg": 8, "load_kg_per_hand": 10}, {"reps_per_leg": 8, "load_kg_per_hand": 10}]},
+    {"name": "Farmer's carry", "sets": [{"distance_m": 40, "load_kg_per_hand": 26}, {"distance_m": 40, "load_kg_per_hand": 26}, {"distance_m": 40, "load_kg_per_hand": 26}]},
+    {"name": "KB swing", "sets": [{"reps": 10, "load_kg": 28}, {"reps": 10, "load_kg": 28}, {"reps": 10, "load_kg": 28}, {"reps": 10, "load_kg": 28}]},
+    {"name": "Lying leg curl", "skipped": true},
+    {"name": "Standing calf raise", "sets": [{"reps": 15}, {"reps": 15}, {"reps": 15}, {"reps": 15}], "load": "heavy"},
+    {"name": "Single-leg calf raise", "sets": [{"reps_per_leg": 12}, {"reps_per_leg": 12}], "load": "bodyweight"}
+  ],
+  "session_notes": "Volume day after busy Friday (5K easy AM + full upper PM). Backed off top weight to chase reps."
+}

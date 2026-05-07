@@ -1,0 +1,38 @@
+{
+  "date": "2026-05-07",
+  "session_type": "intervals",
+  "race_program_week": 1,
+  "title": "Intervals W1 — 10x400 @ 2:44",
+  "location": "Pathum Wan Track",
+  "start_time": "06:33",
+  "session": {
+    "warmup_km": 1.5,
+    "main_set": "10 x 400m",
+    "target_pace_per_rep": "2:44",
+    "rest_seconds": 90,
+    "cooldown_km": 1
+  },
+  "results": {
+    "total_distance_m": 5680,
+    "total_time": "51:28",
+    "avg_pace_per_km_inclusive_rest": "9:03",
+    "avg_hr_bpm": 165,
+    "max_hr_bpm": 184,
+    "training_effect_aerobic": 4.0,
+    "training_effect_anaerobic": 0.4,
+    "training_effect_label": "Tempo (High Aerobic)",
+    "calories": 711
+  },
+  "execution_grade": "A-",
+  "execution_notes": [
+    "All 10 reps completed",
+    "Fast reps held 6:30-7:00/km (~target 2:44)",
+    "Recoveries genuinely easy at 13-15/km",
+    "HR drift minimal (165 stays consistent end-to-end) — good aerobic conditioning",
+    "Bangkok heat at 6:33am pushed HR ~10bpm higher than cool conditions"
+  ],
+  "next_week_target": {
+    "session": "10 x 400m @ 2:42 (5 sec faster), 90s rest",
+    "focus": "Hit 2:42 evenly across all 10 reps"
+  }
+}
