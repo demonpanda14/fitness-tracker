@@ -1,0 +1,83 @@
+{
+  "schedule": [
+    {
+      "day": "Monday",
+      "session_type": "lower_lift",
+      "title": "Lower Lift — Posterior Chain + Running + Golf Power",
+      "time_preference": "flexible",
+      "focus": "70% running durability, 30% golf hip power",
+      "program_ref": "lift_program.json#lower"
+    },
+    {
+      "day": "Tuesday",
+      "sessions": [
+        {
+          "type": "easy_run",
+          "title": "Easy Run 5K",
+          "time_preference": "flexible (often skipped if busy)",
+          "pace_per_km": "7:30-8:00",
+          "zone": "Z2",
+          "notes": "Active recovery from Monday lift. Skip if life is busy — non-essential."
+        },
+        {
+          "type": "yoga",
+          "title": "Yoga Class @ Virgin Active",
+          "time": "13:00-15:00",
+          "fixed": true,
+          "purpose": "hip and T-spine mobility (supports running + golf)"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "session_type": "rest",
+      "title": "Rest Day",
+      "rules": "no HR-raising activity. walking and mobility OK."
+    },
+    {
+      "day": "Thursday",
+      "session_type": "intervals",
+      "title": "Interval Run (Race Prep)",
+      "time_preference": "evening (e.g. 6pm) or morning",
+      "program_ref": "interval_program.json"
+    },
+    {
+      "day": "Friday",
+      "session_type": "upper_lift",
+      "title": "Upper / Pull-up Focus",
+      "time_preference": "flexible",
+      "program_ref": "lift_program.json#upper"
+    },
+    {
+      "day": "Saturday",
+      "session_type": "long_run",
+      "title": "Long Run 10K+",
+      "time": "05:30",
+      "pace_per_km": "7:15-7:30",
+      "shoe_primary": "Asics Megablast",
+      "shoe_backup": "NB 1080v15 (if Megablast used Thursday)",
+      "notes": "Highest injury-risk session. Eat 100-150 kcal carbs 30-45 min before to avoid bonking."
+    },
+    {
+      "day": "Sunday",
+      "session_type": "golf",
+      "title": "Golf Round",
+      "warmup": {
+        "duration_min": 10,
+        "exercises": [
+          {"name": "Cable wood-chop", "sets": 2, "reps_per_side": 10},
+          {"name": "Pallof press", "sets": 2, "reps_per_side": 10},
+          {"name": "Med ball rotational throws", "sets": 2, "reps_per_side": 6, "if_available": true},
+          {"name": "Hip openers + T-spine rotations", "duration_min": 3}
+        ]
+      },
+      "notes": "Sunday IS rotational training. If 36 holes or hilly: take it easier on Mon lift."
+    }
+  ],
+  "stress_distribution": {
+    "high_intensity_days": ["Monday", "Thursday", "Saturday"],
+    "moderate_days": ["Tuesday yoga", "Friday lift", "Sunday golf"],
+    "low_days": ["Tuesday easy run if done"],
+    "rest_days": ["Wednesday"]
+  }
+}

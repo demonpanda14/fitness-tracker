@@ -1,0 +1,20 @@
+{
+  "rotation": [
+    {"name": "NB 1080v15", "role": "easy_primary", "best_for": ["easy_runs", "long_run_backup"], "notes": "Wide fit, plush, ideal for flat/wide feet"},
+    {"name": "Nike Vomero Plus", "role": "easy_alt", "best_for": ["easy_runs"], "notes": "Max ZoomX cushion, recovery focused"},
+    {"name": "Asics Superblast 2", "role": "intervals_primary", "best_for": ["intervals_400m"], "notes": "Snappy, crisp for fast reps. Avoid bad surfaces at 105kg."},
+    {"name": "Asics Megablast", "role": "intervals_alt_long_primary", "best_for": ["intervals_800m_plus", "long_runs"], "notes": "Max cushion, peba-infused. Earns its keep at 105kg over distance."},
+    {"name": "Asics Novablast 5", "role": "backup", "best_for": ["travel", "bonus_runs"], "notes": "Daily trainer, not in primary rotation"}
+  ],
+  "rotation_rules": {
+    "easy_runs": "NB 1080v15 primary, Vomero Plus alt — rotate biweekly",
+    "intervals": "Superblast 2 (week A) and Megablast (week B) — alternate weekly",
+    "long_run_default": "Megablast",
+    "long_run_conflict": "If Megablast was used Thursday, switch to NB 1080v15 (foam needs 24h decompression)"
+  },
+  "principles": [
+    "All shoes are high-stack max-cushion — appropriate for 105kg + heel striker",
+    "When one wears out, consider replacing with firmer option (NB Rebel v5 / Saucony Endorphin Speed) for tempo work",
+    "Stick to smooth pavement when possible (heel-strike + max stack on uneven surface = ankle wobble risk)"
+  ]
+}

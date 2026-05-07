@@ -1,0 +1,180 @@
+{
+  "lower": {
+    "title": "Lower Lift — Posterior Chain + Running + Golf Power",
+    "duration_min": 60,
+    "focus": "70% running durability, 30% golf hip power",
+    "station_flow": ["barbell", "dumbbells", "kettlebell", "machines"],
+    "exercises": [
+      {
+        "order": 1,
+        "name": "Trap-bar deadlift",
+        "station": "barbell",
+        "sets": 4,
+        "reps": 5,
+        "rest_seconds": 150,
+        "current_top_set_kg": 100,
+        "next_target_kg": 105,
+        "rpe_target": 8,
+        "notes": "Drive through mid-foot, don't let it become a squat"
+      },
+      {
+        "order": 2,
+        "name": "RDL",
+        "station": "barbell",
+        "sets": 4,
+        "reps": 6,
+        "rest_seconds": 120,
+        "current_top_set_kg": 60,
+        "next_target_kg": 60,
+        "notes": "Hips back, soft knees, bar drags down thighs. Stop at hamstring stretch limit, not floor."
+      },
+      {
+        "order": 3,
+        "name": "Bulgarian split squat",
+        "station": "dumbbells",
+        "sets": 3,
+        "reps_per_leg": 8,
+        "rest_seconds": 90,
+        "current_load_kg_per_hand": 10,
+        "notes": "Front foot far enough out that knee tracks over mid-foot"
+      },
+      {
+        "order": 4,
+        "name": "Farmer's carry",
+        "station": "dumbbells",
+        "sets": 3,
+        "distance_m": 40,
+        "rest_seconds": 90,
+        "current_load_kg_per_hand": 26,
+        "notes": "Stand tall, ribs down, quick steps. DBs easier than KBs."
+      },
+      {
+        "order": 5,
+        "name": "KB swing",
+        "station": "kettlebell",
+        "sets": 4,
+        "reps": 10,
+        "rest_seconds": 75,
+        "current_load_kg": 28,
+        "purpose": "Golf hip explosiveness",
+        "notes": "Hip snap, not arms. Bell floats up because of hip drive."
+      },
+      {
+        "order": 6,
+        "name": "Lying leg curl",
+        "station": "machines",
+        "sets": 3,
+        "reps": 12,
+        "rest_seconds": 60,
+        "notes": "Slow 3-sec eccentric. Pick weight you'd fail at ~14 reps."
+      },
+      {
+        "order": 7,
+        "name": "Standing calf raise",
+        "station": "machines",
+        "sets": 4,
+        "reps": 15,
+        "rest_seconds": 45,
+        "notes": "Full stretch at bottom, pause 1 sec at top"
+      },
+      {
+        "order": 8,
+        "name": "Single-leg calf raise",
+        "station": "machines",
+        "sets": 2,
+        "reps_per_leg": 12,
+        "rest_seconds": 45
+      }
+    ]
+  },
+  "upper": {
+    "title": "Upper / Pull-up Focus",
+    "duration_min": 50,
+    "primary_goal": "First unassisted pull-up",
+    "station_flow": ["cable_pullup_area", "dumbbells", "bar_rack"],
+    "exercises": [
+      {
+        "order": 1,
+        "name": "Lat pulldown",
+        "station": "cable",
+        "sets": 4,
+        "reps": 6,
+        "rest_seconds": 120,
+        "current_top_set_kg": 70,
+        "next_target_kg": 72.5,
+        "milestone_kg": 85,
+        "notes": "PROGRESSION METRIC for pull-up goal. Track weekly."
+      },
+      {
+        "order": 2,
+        "name": "Chin-grip lat pulldown",
+        "station": "cable",
+        "sets": 3,
+        "reps": 6,
+        "rest_seconds": 120,
+        "current_top_set_kg": 50,
+        "notes": "Palms facing you, narrower grip. Replaces assisted pull-up machine."
+      },
+      {
+        "order": 3,
+        "name": "Face pull",
+        "station": "cable",
+        "sets": 3,
+        "reps": 15,
+        "rest_seconds": 50,
+        "current_top_set_kg": 25
+      },
+      {
+        "order": 4,
+        "name": "DB press (30 degree incline)",
+        "station": "dumbbells",
+        "sets": 4,
+        "reps": 8,
+        "rest_seconds": 120,
+        "current_top_set_kg_per_hand": 16,
+        "next_target_kg_per_hand": 16,
+        "notes": "Deep ROM. Preferred over barbell at this size."
+      },
+      {
+        "order": 5,
+        "name": "One-arm DB row",
+        "station": "dumbbells",
+        "sets": 4,
+        "reps_per_arm": 8,
+        "rest_seconds": 90,
+        "current_top_set_kg_per_hand": 20,
+        "next_target_kg_per_hand": 20,
+        "notes": "Pull to hip, not chest. Squeeze lat for 1 sec at top."
+      },
+      {
+        "order": 6,
+        "name": "Inverted row",
+        "station": "bar_rack",
+        "sets": 3,
+        "reps": 8,
+        "rest_seconds": 75,
+        "load": "bodyweight"
+      },
+      {
+        "order": 7,
+        "name": "Farmer's carry",
+        "station": "dumbbells",
+        "sets": 3,
+        "distance_m": 40,
+        "rest_seconds": 90,
+        "current_load_kg_per_hand": 24,
+        "added_to_upper": true
+      },
+      {
+        "order": 8,
+        "name": "Pallof press",
+        "station": "cable",
+        "sets": 3,
+        "reps_per_side": 15,
+        "current_load_kg": 12.5,
+        "purpose": "Golf anti-rotation core",
+        "notes": "Replaced dead hang. Slow controlled press."
+      }
+    ]
+  }
+}

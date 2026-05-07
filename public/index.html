@@ -6,182 +6,67 @@
   <title>Tawan's Fitness Tracker</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0f0f13;
-      color: #f0f0f0;
-      min-height: 100vh;
-    }
-
-    header {
-      background: #1a1a24;
-      border-bottom: 1px solid #2a2a3a;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f13; color: #f0f0f0; min-height: 100vh; }
+    header { background: #1a1a24; border-bottom: 1px solid #2a2a3a; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
     header h1 { font-size: 18px; font-weight: 700; color: #fff; }
     header .date { font-size: 13px; color: #888; }
-
-    nav {
-      display: flex;
-      gap: 4px;
-      padding: 12px 20px;
-      background: #1a1a24;
-      border-bottom: 1px solid #2a2a3a;
-      overflow-x: auto;
-    }
-
-    nav button {
-      background: none;
-      border: 1px solid #333;
-      color: #aaa;
-      padding: 7px 16px;
-      border-radius: 20px;
-      font-size: 13px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-
-    nav button.active, nav button:hover {
-      background: #6c63ff;
-      border-color: #6c63ff;
-      color: #fff;
-    }
-
+    nav { display: flex; gap: 4px; padding: 12px 20px; background: #1a1a24; border-bottom: 1px solid #2a2a3a; overflow-x: auto; }
+    nav button { background: none; border: 1px solid #333; color: #aaa; padding: 7px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+    nav button.active, nav button:hover { background: #6c63ff; border-color: #6c63ff; color: #fff; }
     main { padding: 20px; max-width: 700px; margin: 0 auto; }
-
     .page { display: none; }
     .page.active { display: block; }
-
-    .card {
-      background: #1a1a24;
-      border: 1px solid #2a2a3a;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-
+    .card { background: #1a1a24; border: 1px solid #2a2a3a; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
     .card h2 { font-size: 15px; font-weight: 600; color: #aaa; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
     .card h3 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-
-    .tag {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
     .tag-run { background: #1a3a2a; color: #4caf76; }
     .tag-lift { background: #1a2a3a; color: #4c9af5; }
     .tag-rest { background: #2a2a2a; color: #888; }
     .tag-golf { background: #3a2a1a; color: #f5a44c; }
-    .tag-deload { background: #3a1a3a; color: #c44cf5; }
-
     .progress-bar-wrap { margin: 8px 0 4px; }
     .progress-bar-label { display: flex; justify-content: space-between; font-size: 13px; color: #aaa; margin-bottom: 6px; }
     .progress-bar { height: 10px; background: #2a2a3a; border-radius: 6px; overflow: hidden; }
     .progress-bar-fill { height: 100%; border-radius: 6px; transition: width 0.6s ease; }
     .fill-purple { background: linear-gradient(90deg, #6c63ff, #a78bfa); }
     .fill-green { background: linear-gradient(90deg, #22c55e, #4ade80); }
-    .fill-orange { background: linear-gradient(90deg, #f97316, #fb923c); }
-
     .exercise-list { list-style: none; }
-    .exercise-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #2a2a3a;
-      font-size: 14px;
-    }
+    .exercise-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #2a2a3a; font-size: 14px; }
     .exercise-list li:last-child { border-bottom: none; }
     .exercise-name { font-weight: 500; color: #eee; }
     .exercise-meta { color: #888; font-size: 13px; }
     .exercise-weight { color: #6c63ff; font-weight: 600; font-size: 14px; }
-
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .big-stat { text-align: center; padding: 8px 0; }
     .big-stat .value { font-size: 42px; font-weight: 800; color: #fff; line-height: 1; }
     .big-stat .unit { font-size: 14px; color: #888; margin-top: 4px; }
-
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-
-    .session-log-item {
-      padding: 12px 0;
-      border-bottom: 1px solid #2a2a3a;
-    }
+    .race-countdown { text-align: center; padding: 12px 0; }
+    .race-countdown .days { font-size: 52px; font-weight: 800; color: #f97316; line-height: 1; }
+    .race-countdown .label { font-size: 13px; color: #888; margin-top: 4px; }
+    .session-log-item { padding: 12px 0; border-bottom: 1px solid #2a2a3a; }
     .session-log-item:last-child { border-bottom: none; }
     .session-log-item .top { display: flex; justify-content: space-between; align-items: center; }
     .session-log-item .session-title { font-weight: 600; font-size: 15px; }
     .session-log-item .session-date { font-size: 12px; color: #888; }
     .session-log-item .session-notes { font-size: 13px; color: #aaa; margin-top: 4px; }
     .grade { font-size: 20px; font-weight: 800; color: #6c63ff; }
-
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-size: 13px; color: #aaa; margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      background: #12121a;
-      border: 1px solid #333;
-      color: #f0f0f0;
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: #12121a; border: 1px solid #333; color: #f0f0f0; padding: 10px 12px; border-radius: 8px; font-size: 14px; }
     .form-group textarea { height: 80px; resize: vertical; }
-
-    .btn {
-      width: 100%;
-      padding: 14px;
-      background: #6c63ff;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 4px;
-      transition: background 0.2s;
-    }
+    .btn { width: 100%; padding: 14px; background: #6c63ff; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 4px; transition: background 0.2s; }
     .btn:hover { background: #5a52e0; }
-    .btn-success { background: #22c55e; }
-    .btn-success:hover { background: #16a34a; }
-
-    .alert {
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
+    .alert { padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
     .alert-success { background: #14291e; border: 1px solid #22c55e; color: #4ade80; }
-    .alert-info { background: #1a1a3a; border: 1px solid #6c63ff; color: #a78bfa; }
-
-    .race-countdown { text-align: center; padding: 12px 0; }
-    .race-countdown .days { font-size: 52px; font-weight: 800; color: #f97316; line-height: 1; }
-    .race-countdown .label { font-size: 13px; color: #888; margin-top: 4px; }
-
-    .week-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #2a2a3a;
-      font-size: 13px;
-    }
+    .week-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #2a2a3a; font-size: 13px; }
     .week-row:last-child { border-bottom: none; }
-    .week-row.current { background: #1e1e2e; border-radius: 8px; padding: 10px 10px; margin: 0 -10px; }
+    .week-row.current { background: #1e1e2e; border-radius: 8px; padding: 10px; margin: 0 -10px; }
     .week-row .wk { color: #888; width: 50px; }
     .week-row .session-name { flex: 1; color: #eee; }
     .week-row .pace { color: #6c63ff; font-weight: 600; text-align: right; }
     .week-row.deload .session-name { color: #c44cf5; }
-
     #save-alert { display: none; }
+    .spinner { text-align: center; padding: 40px; color: #888; }
   </style>
 </head>
 <body>
@@ -192,20 +77,20 @@
 </header>
 
 <nav>
-  <button class="active" onclick="showPage('today')">Today</button>
-  <button onclick="showPage('progress')">Progress</button>
-  <button onclick="showPage('log')">Log Session</button>
-  <button onclick="showPage('history')">History</button>
-  <button onclick="showPage('plan')">Race Plan</button>
+  <button class="active" onclick="showPage('today', this)">Today</button>
+  <button onclick="showPage('progress', this)">Progress</button>
+  <button onclick="showPage('log', this)">Log Session</button>
+  <button onclick="showPage('history', this)">History</button>
+  <button onclick="showPage('plan', this)">Race Plan</button>
 </nav>
 
 <main>
 
   <!-- TODAY -->
   <div id="page-today" class="page active">
-    <div class="card" id="today-card">
+    <div class="card">
       <h2>Today's Session</h2>
-      <div id="today-content"><p style="color:#888">Loading...</p></div>
+      <div id="today-content"><div class="spinner">Loading...</div></div>
     </div>
     <div class="card" id="today-detail-card" style="display:none">
       <h2 id="today-detail-title">Exercises</h2>
@@ -215,7 +100,6 @@
 
   <!-- PROGRESS -->
   <div id="page-progress" class="page">
-
     <div class="two-col">
       <div class="card">
         <h2>Pull-up Goal</h2>
@@ -224,14 +108,10 @@
           <div class="unit">kg / 85 kg target</div>
         </div>
         <div class="progress-bar-wrap">
-          <div class="progress-bar-label">
-            <span id="pullup-pct">—</span>
-            <span>85 kg</span>
-          </div>
+          <div class="progress-bar-label"><span id="pullup-pct">—</span><span>85 kg</span></div>
           <div class="progress-bar"><div class="progress-bar-fill fill-purple" id="pullup-bar" style="width:0%"></div></div>
         </div>
       </div>
-
       <div class="card">
         <h2>Race Countdown</h2>
         <div class="race-countdown">
@@ -240,39 +120,28 @@
         </div>
       </div>
     </div>
-
     <div class="card">
-      <h2>10K Pace Target</h2>
+      <h2>10K Pace Progress</h2>
       <div class="progress-bar-wrap">
-        <div class="progress-bar-label">
-          <span>Current: <span id="pace-current">—</span></span>
-          <span>Target: 6:50/km</span>
-        </div>
+        <div class="progress-bar-label"><span>Latest: <span id="pace-current">—</span></span><span>Target: 6:50/km</span></div>
         <div class="progress-bar"><div class="progress-bar-fill fill-green" id="pace-bar" style="width:0%"></div></div>
       </div>
     </div>
-
     <div class="card">
       <h2>Weekly Schedule</h2>
       <ul class="exercise-list" id="weekly-schedule"></ul>
     </div>
-
   </div>
 
   <!-- LOG SESSION -->
   <div id="page-log" class="page">
     <div class="card">
       <h2>Log a Session</h2>
-
       <div id="save-alert" class="alert alert-success">Session saved!</div>
-
-      <div class="form-group">
-        <label>Date</label>
-        <input type="date" id="log-date" />
-      </div>
+      <div class="form-group"><label>Date</label><input type="date" id="log-date" /></div>
       <div class="form-group">
         <label>Session Type</label>
-        <select id="log-type">
+        <select id="log-type" onchange="switchFields()">
           <option value="upper_lift">Upper Lift (Pull-up Focus)</option>
           <option value="lower_lift">Lower Lift</option>
           <option value="intervals">Interval Run</option>
@@ -282,105 +151,38 @@
         </select>
       </div>
 
-      <!-- Upper lift fields -->
       <div id="fields-upper_lift">
-        <div class="form-group">
-          <label>Lat Pulldown — Top Set (kg)</label>
-          <input type="number" id="lat-pulldown-kg" placeholder="e.g. 72.5" />
-        </div>
-        <div class="form-group">
-          <label>Chin-grip Pulldown — Top Set (kg)</label>
-          <input type="number" id="chin-pulldown-kg" placeholder="e.g. 52.5" />
-        </div>
-        <div class="form-group">
-          <label>DB Press — Top Set per hand (kg)</label>
-          <input type="number" id="db-press-kg" placeholder="e.g. 16" />
-        </div>
+        <div class="form-group"><label>Lat Pulldown — Top Set (kg)</label><input type="number" id="lat-pulldown-kg" placeholder="e.g. 72.5" /></div>
+        <div class="form-group"><label>Chin-grip Pulldown — Top Set (kg)</label><input type="number" id="chin-pulldown-kg" placeholder="e.g. 52.5" /></div>
+        <div class="form-group"><label>DB Press — Top Set per hand (kg)</label><input type="number" id="db-press-kg" placeholder="e.g. 16" /></div>
       </div>
-
-      <!-- Lower lift fields -->
       <div id="fields-lower_lift" style="display:none">
-        <div class="form-group">
-          <label>Trap-bar Deadlift — Top Set (kg)</label>
-          <input type="number" id="deadlift-kg" placeholder="e.g. 100" />
-        </div>
-        <div class="form-group">
-          <label>RDL — Top Set (kg)</label>
-          <input type="number" id="rdl-kg" placeholder="e.g. 60" />
-        </div>
-        <div class="form-group">
-          <label>KB Swing — Weight (kg)</label>
-          <input type="number" id="kb-swing-kg" placeholder="e.g. 28" />
-        </div>
+        <div class="form-group"><label>Trap-bar Deadlift — Top Set (kg)</label><input type="number" id="deadlift-kg" placeholder="e.g. 100" /></div>
+        <div class="form-group"><label>RDL — Top Set (kg)</label><input type="number" id="rdl-kg" placeholder="e.g. 60" /></div>
+        <div class="form-group"><label>KB Swing — Weight (kg)</label><input type="number" id="kb-swing-kg" placeholder="e.g. 28" /></div>
       </div>
-
-      <!-- Run fields -->
       <div id="fields-intervals" style="display:none">
-        <div class="form-group">
-          <label>Interval Set (e.g. "10 x 400m")</label>
-          <input type="text" id="interval-set" placeholder="10 x 400m" />
-        </div>
-        <div class="form-group">
-          <label>Target Pace per Rep (e.g. "2:44")</label>
-          <input type="text" id="interval-pace" placeholder="2:44" />
-        </div>
-        <div class="form-group">
-          <label>Avg HR (bpm)</label>
-          <input type="number" id="run-hr" placeholder="e.g. 165" />
-        </div>
-        <div class="form-group">
-          <label>Execution Grade (A+, A, A-, B+…)</label>
-          <input type="text" id="run-grade" placeholder="A-" />
-        </div>
+        <div class="form-group"><label>Interval Set (e.g. "10 x 400m")</label><input type="text" id="interval-set" placeholder="10 x 400m" /></div>
+        <div class="form-group"><label>Target Pace per Rep (e.g. "2:44")</label><input type="text" id="interval-pace" placeholder="2:44" /></div>
+        <div class="form-group"><label>Avg HR (bpm)</label><input type="number" id="run-hr" placeholder="e.g. 165" /></div>
+        <div class="form-group"><label>Execution Grade (A+, A, A-, B+…)</label><input type="text" id="run-grade" placeholder="A-" /></div>
       </div>
-
       <div id="fields-long_run" style="display:none">
-        <div class="form-group">
-          <label>Distance (km)</label>
-          <input type="number" id="long-dist" placeholder="e.g. 10" />
-        </div>
-        <div class="form-group">
-          <label>Avg Pace per km (e.g. "7:20")</label>
-          <input type="text" id="long-pace" placeholder="7:20" />
-        </div>
-        <div class="form-group">
-          <label>Avg HR (bpm)</label>
-          <input type="number" id="long-hr" placeholder="e.g. 155" />
-        </div>
+        <div class="form-group"><label>Distance (km)</label><input type="number" id="long-dist" placeholder="e.g. 10" /></div>
+        <div class="form-group"><label>Avg Pace per km (e.g. "7:20")</label><input type="text" id="long-pace" placeholder="7:20" /></div>
+        <div class="form-group"><label>Avg HR (bpm)</label><input type="number" id="long-hr" placeholder="e.g. 155" /></div>
       </div>
-
       <div id="fields-easy_run" style="display:none">
-        <div class="form-group">
-          <label>Distance (km)</label>
-          <input type="number" id="easy-dist" placeholder="e.g. 5" />
-        </div>
-        <div class="form-group">
-          <label>Avg Pace per km (e.g. "7:45")</label>
-          <input type="text" id="easy-pace" placeholder="7:45" />
-        </div>
+        <div class="form-group"><label>Distance (km)</label><input type="number" id="easy-dist" placeholder="e.g. 5" /></div>
+        <div class="form-group"><label>Avg Pace per km</label><input type="text" id="easy-pace" placeholder="7:45" /></div>
       </div>
-
       <div id="fields-golf" style="display:none">
-        <div class="form-group">
-          <label>Holes Played</label>
-          <input type="number" id="golf-holes" placeholder="e.g. 18" />
-        </div>
-        <div class="form-group">
-          <label>Felt Strong? (notes)</label>
-          <textarea id="golf-notes" placeholder="e.g. Good hip rotation, hit 12/14 fairways"></textarea>
-        </div>
+        <div class="form-group"><label>Holes Played</label><input type="number" id="golf-holes" placeholder="e.g. 18" /></div>
+        <div class="form-group"><label>Notes</label><textarea id="golf-notes" placeholder="e.g. Good hip rotation, hit 12/14 fairways"></textarea></div>
       </div>
 
-      <!-- RPE always visible -->
-      <div class="form-group">
-        <label>RPE (1–10, how hard did it feel?)</label>
-        <input type="number" id="log-rpe" min="1" max="10" placeholder="e.g. 7" />
-      </div>
-      <div class="form-group">
-        <label>Notes (optional)</label>
-        <textarea id="log-notes" placeholder="How did it feel? Anything to flag?"></textarea>
-      </div>
-
+      <div class="form-group"><label>RPE (1–10, how hard did it feel?)</label><input type="number" id="log-rpe" min="1" max="10" placeholder="e.g. 7" /></div>
+      <div class="form-group"><label>Notes (optional)</label><textarea id="log-notes" placeholder="How did it feel?"></textarea></div>
       <button class="btn" onclick="saveSession()">Save Session</button>
     </div>
   </div>
@@ -389,7 +191,7 @@
   <div id="page-history" class="page">
     <div class="card">
       <h2>Session History</h2>
-      <div id="history-list"><p style="color:#888">Loading...</p></div>
+      <div id="history-list"><div class="spinner">Loading...</div></div>
     </div>
   </div>
 
@@ -398,40 +200,79 @@
     <div class="card">
       <h2>15-Week Interval Plan</h2>
       <p style="font-size:13px;color:#888;margin-bottom:16px;">Asics META Time Trials — Aug 16, 2026 — Target: 68:20 (6:50/km)</p>
-      <div id="race-plan-list"></div>
+      <div id="race-plan-list"><div class="spinner">Loading...</div></div>
     </div>
   </div>
 
 </main>
 
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCQNYR9R56Qv5CNubPYDJVrhnxjuXjgEFc",
+    authDomain: "fitness-tracker-c7ae5.firebaseapp.com",
+    projectId: "fitness-tracker-c7ae5",
+    storageBucket: "fitness-tracker-c7ae5.firebasestorage.app",
+    messagingSenderId: "195052479736",
+    appId: "1:195052479736:web:01ca40b7d4ade2314a870d"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  window._db = db;
+  window._fbModules = { collection, addDoc, getDocs, query, orderBy };
+
+  // Load static data
+  const [weeklyPlan, liftProgram, intervalProgram] = await Promise.all([
+    fetch('data/weekly_plan.json').then(r => r.json()),
+    fetch('data/lift_program.json').then(r => r.json()),
+    fetch('data/interval_program.json').then(r => r.json()),
+  ]);
+  window._data = { weeklyPlan, liftProgram, intervalProgram };
+
+  initApp();
+</script>
+
 <script>
   // Header date
   const now = new Date();
   document.getElementById('header-date').textContent = now.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long' });
-
-  // Set today's date in log form
   document.getElementById('log-date').value = now.toISOString().split('T')[0];
 
-  function showPage(name) {
+  function showPage(name, btn) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
     document.getElementById('page-' + name).classList.add('active');
-    event.target.classList.add('active');
-    if (name === 'progress') loadProgress();
+    if (btn) btn.classList.add('active');
     if (name === 'history') loadHistory();
+    if (name === 'progress') loadProgress();
     if (name === 'plan') loadPlan();
   }
+  window.showPage = showPage;
 
-  // ---- TODAY ----
-  async function loadToday() {
-    const res = await fetch('/api/today');
-    const data = await res.json();
-    const { day, plan, detail } = data;
+  function switchFields() {
+    const type = document.getElementById('log-type').value;
+    ['upper_lift','lower_lift','intervals','long_run','easy_run','golf'].forEach(t => {
+      document.getElementById('fields-' + t).style.display = t === type ? 'block' : 'none';
+    });
+  }
+  window.switchFields = switchFields;
 
-    if (!plan) {
-      document.getElementById('today-content').innerHTML = '<p style="color:#888">No session data found.</p>';
-      return;
-    }
+  function initApp() {
+    loadToday();
+  }
+  window.initApp = initApp;
+
+  function loadToday() {
+    const { weeklyPlan, liftProgram, intervalProgram } = window._data;
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const today = days[now.getDay()];
+    const plan = weeklyPlan.schedule.find(d => d.day === today);
+
+    if (!plan) { document.getElementById('today-content').innerHTML = '<p style="color:#888">No session found.</p>'; return; }
 
     const typeTag = {
       lower_lift: '<span class="tag tag-lift">Lower Lift</span>',
@@ -443,23 +284,28 @@
       rest: '<span class="tag tag-rest">Rest Day</span>',
     };
 
-    const type = plan.session_type || (plan.sessions ? 'multi' : 'rest');
+    const type = plan.session_type || 'rest';
     let html = `<h3>${plan.title}</h3>${typeTag[type] || ''}`;
 
     if (plan.sessions) {
       html += plan.sessions.map(s => `<p style="margin-top:8px;font-size:14px;color:#ccc">• ${s.title}</p>`).join('');
     }
 
-    if (type === 'intervals' && detail) {
+    let detail = null;
+    if (type === 'lower_lift') detail = liftProgram.lower;
+    if (type === 'upper_lift') detail = liftProgram.upper;
+    if (type === 'intervals') {
+      const start = new Date('2026-05-07');
+      const weekNum = Math.floor((now - start) / (7*24*60*60*1000)) + 1;
+      detail = intervalProgram.weeks.find(w => w.week === weekNum) || intervalProgram.weeks[0];
       html += `<div style="margin-top:12px;padding:12px;background:#12121a;border-radius:8px;">
-        <p style="font-size:13px;color:#aaa">Week ${detail.week} — ${detail.phase?.replace('_',' ')}</p>
+        <p style="font-size:13px;color:#aaa">Week ${detail.week} — ${(detail.phase||'').replace('_',' ')}</p>
         <p style="font-size:22px;font-weight:700;color:#fff;margin:4px 0">${detail.session}</p>
-        <p style="font-size:15px;color:#6c63ff">@ ${detail.pace_per_rep} per rep &nbsp;·&nbsp; ${detail.rest_seconds}s rest</p>
+        <p style="font-size:15px;color:#6c63ff">@ ${detail.pace_per_rep} per rep · ${detail.rest_seconds}s rest</p>
         <p style="font-size:13px;color:#888;margin-top:4px">Shoe: ${detail.shoe}</p>
         ${detail.notes ? `<p style="font-size:13px;color:#f5a44c;margin-top:4px">${detail.notes}</p>` : ''}
       </div>`;
     }
-
     if (type === 'long_run') {
       html += `<p style="margin-top:10px;font-size:14px;color:#aaa">Pace: ${plan.pace_per_km} · Shoe: ${plan.shoe_primary}</p>`;
       if (plan.notes) html += `<p style="font-size:13px;color:#f5a44c;margin-top:4px">${plan.notes}</p>`;
@@ -467,191 +313,147 @@
 
     document.getElementById('today-content').innerHTML = html;
 
-    // exercises
     if (detail?.exercises) {
       document.getElementById('today-detail-card').style.display = 'block';
       document.getElementById('today-detail-title').textContent = detail.title;
       document.getElementById('today-exercises').innerHTML = detail.exercises.map(ex => {
         const reps = ex.reps ? `${ex.sets}×${ex.reps}` : ex.reps_per_leg ? `${ex.sets}×${ex.reps_per_leg}/leg` : ex.reps_per_arm ? `${ex.sets}×${ex.reps_per_arm}/arm` : ex.distance_m ? `${ex.sets}×${ex.distance_m}m` : '';
         const weight = ex.current_top_set_kg ? `${ex.current_top_set_kg}kg` : ex.current_load_kg_per_hand ? `${ex.current_load_kg_per_hand}kg/hand` : ex.current_load_kg ? `${ex.current_load_kg}kg` : ex.load || '';
-        return `<li>
-          <div>
-            <div class="exercise-name">${ex.order}. ${ex.name}</div>
-            <div class="exercise-meta">${reps}</div>
-          </div>
-          <div class="exercise-weight">${weight}</div>
-        </li>`;
+        return `<li><div><div class="exercise-name">${ex.order}. ${ex.name}</div><div class="exercise-meta">${reps}</div></div><div class="exercise-weight">${weight}</div></li>`;
       }).join('');
     }
   }
 
-  // ---- PROGRESS ----
   async function loadProgress() {
-    const res = await fetch('/api/progress');
-    const data = await res.json();
+    const { collection, getDocs, query, orderBy } = window._fbModules;
+    const db = window._db;
+    const snap = await getDocs(query(collection(db, 'sessions'), orderBy('date', 'asc')));
+    const sessions = snap.docs.map(d => d.data());
 
-    // Pull-up
-    const pullupData = data.pullupProgress;
-    const latestPullup = pullupData.length ? pullupData[pullupData.length - 1].kg : 70;
+    const upperSessions = sessions.filter(s => s.session_type === 'upper_lift' && s.results?.lat_pulldown_top_set_kg);
+    const latestPullup = upperSessions.length ? upperSessions[upperSessions.length-1].results.lat_pulldown_top_set_kg : 70;
     const pct = Math.min(100, Math.round((latestPullup / 85) * 100));
     document.getElementById('pullup-current').textContent = latestPullup;
     document.getElementById('pullup-pct').textContent = pct + '%';
     document.getElementById('pullup-bar').style.width = pct + '%';
 
-    // Race countdown
     const race = new Date('2026-08-16');
-    const daysLeft = Math.ceil((race - new Date()) / (1000 * 60 * 60 * 24));
-    document.getElementById('race-days').textContent = daysLeft;
+    document.getElementById('race-days').textContent = Math.ceil((race - now) / (1000*60*60*24));
 
-    // Pace progress (latest interval session)
-    const latestInterval = data.paceProgress.length ? data.paceProgress[data.paceProgress.length - 1] : null;
-    if (latestInterval) {
-      const [min, sec] = latestInterval.pace.split(':').map(Number);
-      const paceSeconds = min * 60 + sec;
-      const targetSeconds = 2 * 60 + 44; // 2:44 start
-      const goalSeconds = 2 * 60 + 38;   // 2:38 goal
-      const pacePct = Math.min(100, Math.round(((targetSeconds - paceSeconds) / (targetSeconds - goalSeconds)) * 100));
-      document.getElementById('pace-current').textContent = latestInterval.pace + '/400m';
-      document.getElementById('pace-bar').style.width = Math.max(5, pacePct) + '%';
+    const intervalSessions = sessions.filter(s => s.session_type === 'intervals' && s.session?.target_pace_per_rep);
+    if (intervalSessions.length) {
+      const latest = intervalSessions[intervalSessions.length-1];
+      const pace = latest.session.target_pace_per_rep;
+      const [m,s] = pace.split(':').map(Number);
+      const sec = m*60+s;
+      const pacePct = Math.min(100, Math.max(5, Math.round(((164 - sec) / (164 - 158)) * 100)));
+      document.getElementById('pace-current').textContent = pace + '/400m';
+      document.getElementById('pace-bar').style.width = pacePct + '%';
     }
 
-    // Weekly schedule
-    const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-    const today = new Date().toLocaleDateString('en-US', {weekday:'long'});
-    const scheduleRes = await fetch('/api/today');
-    const weeklyPlan = await (await fetch('/api/today')).json();
-
-    // Simple static weekly display
     const schedule = [
-      { day: 'Monday', label: 'Lower Lift', tag: 'lift' },
-      { day: 'Tuesday', label: 'Easy Run + Yoga', tag: 'run' },
-      { day: 'Wednesday', label: 'Rest Day', tag: 'rest' },
-      { day: 'Thursday', label: 'Intervals', tag: 'run' },
-      { day: 'Friday', label: 'Upper Lift', tag: 'lift' },
-      { day: 'Saturday', label: 'Long Run', tag: 'run' },
-      { day: 'Sunday', label: 'Golf', tag: 'golf' },
+      {day:'Monday',label:'Lower Lift',tag:'lift'},
+      {day:'Tuesday',label:'Easy Run + Yoga',tag:'run'},
+      {day:'Wednesday',label:'Rest Day',tag:'rest'},
+      {day:'Thursday',label:'Intervals',tag:'run'},
+      {day:'Friday',label:'Upper Lift',tag:'lift'},
+      {day:'Saturday',label:'Long Run',tag:'run'},
+      {day:'Sunday',label:'Golf',tag:'golf'},
     ];
+    const todayName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()];
+    const tagColor = {lift:'#4c9af5',run:'#4caf76',rest:'#888',golf:'#f5a44c'};
     document.getElementById('weekly-schedule').innerHTML = schedule.map(s => {
-      const isToday = s.day === today;
-      const tagColor = { lift: '#4c9af5', run: '#4caf76', rest: '#888', golf: '#f5a44c' }[s.tag];
+      const isToday = s.day === todayName;
       return `<li style="${isToday ? 'background:#1e1e2e;padding:8px 10px;margin:0 -10px;border-radius:8px;' : ''}">
-        <div>
-          <div class="exercise-name">${s.day}${isToday ? ' <span style="font-size:11px;color:#6c63ff">← today</span>' : ''}</div>
-          <div class="exercise-meta">${s.label}</div>
-        </div>
-        <div style="color:${tagColor};font-size:13px;font-weight:600">●</div>
+        <div><div class="exercise-name">${s.day}${isToday ? ' <span style="font-size:11px;color:#6c63ff">← today</span>' : ''}</div><div class="exercise-meta">${s.label}</div></div>
+        <div style="color:${tagColor[s.tag]};font-size:13px;font-weight:600">●</div>
       </li>`;
     }).join('');
   }
-
-  // ---- LOG ----
-  document.getElementById('log-type').addEventListener('change', function() {
-    ['upper_lift','lower_lift','intervals','long_run','easy_run','golf'].forEach(t => {
-      document.getElementById('fields-' + t).style.display = 'none';
-    });
-    document.getElementById('fields-' + this.value).style.display = 'block';
-  });
+  window.loadProgress = loadProgress;
 
   async function saveSession() {
+    const { collection, addDoc } = window._fbModules;
+    const db = window._db;
     const type = document.getElementById('log-type').value;
     const date = document.getElementById('log-date').value;
     const rpe = document.getElementById('log-rpe').value;
     const notes = document.getElementById('log-notes').value;
 
-    const session = { date, session_type: type, rpe: rpe ? Number(rpe) : null, notes };
+    const session = { date, session_type: type, rpe: rpe ? Number(rpe) : null, notes, logged_at: new Date().toISOString() };
 
-    if (type === 'upper_lift') {
-      session.results = {
-        lat_pulldown_top_set_kg: Number(document.getElementById('lat-pulldown-kg').value) || null,
-        chin_pulldown_top_set_kg: Number(document.getElementById('chin-pulldown-kg').value) || null,
-        db_press_top_set_kg: Number(document.getElementById('db-press-kg').value) || null,
-      };
-    }
-    if (type === 'lower_lift') {
-      session.results = {
-        deadlift_top_set_kg: Number(document.getElementById('deadlift-kg').value) || null,
-        rdl_top_set_kg: Number(document.getElementById('rdl-kg').value) || null,
-        kb_swing_kg: Number(document.getElementById('kb-swing-kg').value) || null,
-      };
-    }
+    if (type === 'upper_lift') session.results = {
+      lat_pulldown_top_set_kg: Number(document.getElementById('lat-pulldown-kg').value) || null,
+      chin_pulldown_top_set_kg: Number(document.getElementById('chin-pulldown-kg').value) || null,
+      db_press_top_set_kg: Number(document.getElementById('db-press-kg').value) || null,
+    };
+    if (type === 'lower_lift') session.results = {
+      deadlift_top_set_kg: Number(document.getElementById('deadlift-kg').value) || null,
+      rdl_top_set_kg: Number(document.getElementById('rdl-kg').value) || null,
+      kb_swing_kg: Number(document.getElementById('kb-swing-kg').value) || null,
+    };
     if (type === 'intervals') {
-      session.session = {
-        main_set: document.getElementById('interval-set').value,
-        target_pace_per_rep: document.getElementById('interval-pace').value,
-      };
+      session.session = { main_set: document.getElementById('interval-set').value, target_pace_per_rep: document.getElementById('interval-pace').value };
       session.results = { avg_hr_bpm: Number(document.getElementById('run-hr').value) || null };
       session.execution_grade = document.getElementById('run-grade').value;
     }
-    if (type === 'long_run') {
-      session.results = {
-        distance_km: Number(document.getElementById('long-dist').value) || null,
-        avg_pace_per_km: document.getElementById('long-pace').value,
-        avg_hr_bpm: Number(document.getElementById('long-hr').value) || null,
-      };
-    }
-    if (type === 'easy_run') {
-      session.results = {
-        distance_km: Number(document.getElementById('easy-dist').value) || null,
-        avg_pace_per_km: document.getElementById('easy-pace').value,
-      };
-    }
+    if (type === 'long_run') session.results = {
+      distance_km: Number(document.getElementById('long-dist').value) || null,
+      avg_pace_per_km: document.getElementById('long-pace').value,
+      avg_hr_bpm: Number(document.getElementById('long-hr').value) || null,
+    };
+    if (type === 'easy_run') session.results = {
+      distance_km: Number(document.getElementById('easy-dist').value) || null,
+      avg_pace_per_km: document.getElementById('easy-pace').value,
+    };
     if (type === 'golf') {
       session.results = { holes: Number(document.getElementById('golf-holes').value) || null };
       session.notes = document.getElementById('golf-notes').value;
     }
 
-    await fetch('/api/sessions', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(session) });
+    await addDoc(collection(db, 'sessions'), session);
 
     const alert = document.getElementById('save-alert');
     alert.style.display = 'block';
     setTimeout(() => alert.style.display = 'none', 3000);
   }
+  window.saveSession = saveSession;
 
-  // ---- HISTORY ----
   async function loadHistory() {
-    const sessions = await (await fetch('/api/sessions')).json();
-    const typeLabels = {
-      upper_lift: 'Upper Lift', lower_lift: 'Lower Lift', intervals: 'Intervals',
-      long_run: 'Long Run', easy_run: 'Easy Run', golf: 'Golf'
-    };
+    const { collection, getDocs, query, orderBy } = window._fbModules;
+    const db = window._db;
+    const snap = await getDocs(query(collection(db, 'sessions'), orderBy('date', 'desc')));
+    const sessions = snap.docs.map(d => d.data());
+    const typeLabels = { upper_lift:'Upper Lift', lower_lift:'Lower Lift', intervals:'Intervals', long_run:'Long Run', easy_run:'Easy Run', golf:'Golf' };
     document.getElementById('history-list').innerHTML = sessions.map(s => {
-      const label = typeLabels[s.session_type] || s.session_type;
-      const grade = s.execution_grade ? `<span class="grade">${s.execution_grade}</span>` : '';
-      const notes = s.execution_notes ? s.execution_notes[0] : (s.notes || '');
+      const notes = s.execution_notes?.[0] || s.notes || '';
       return `<div class="session-log-item">
-        <div class="top">
-          <span class="session-title">${label}</span>
-          ${grade}
-        </div>
+        <div class="top"><span class="session-title">${typeLabels[s.session_type]||s.session_type}</span>${s.execution_grade ? `<span class="grade">${s.execution_grade}</span>` : ''}</div>
         <div class="session-date">${s.date}</div>
         ${notes ? `<div class="session-notes">${notes}</div>` : ''}
       </div>`;
     }).join('') || '<p style="color:#888">No sessions logged yet.</p>';
   }
+  window.loadHistory = loadHistory;
 
-  // ---- RACE PLAN ----
-  async function loadPlan() {
-    const data = await (await fetch('/api/program')).json();
-    const today = new Date();
-    document.getElementById('race-plan-list').innerHTML = data.weeks.map(w => {
-      if (w.week === 'RACE') {
-        return `<div class="week-row" style="background:#1e1a14;border-radius:8px;padding:10px;margin:4px -10px">
-          <span class="wk" style="color:#f97316;font-weight:700">RACE</span>
-          <span class="session-name" style="color:#f97316;font-weight:700">Aug 16 — 10K Race Day 🏁</span>
-          <span class="pace" style="color:#f97316">6:50/km</span>
-        </div>`;
-      }
+  function loadPlan() {
+    const { intervalProgram } = window._data;
+    document.getElementById('race-plan-list').innerHTML = intervalProgram.weeks.map(w => {
+      if (w.week === 'RACE') return `<div class="week-row" style="background:#1e1a14;border-radius:8px;padding:10px;margin:4px -10px">
+        <span class="wk" style="color:#f97316;font-weight:700">RACE</span>
+        <span class="session-name" style="color:#f97316;font-weight:700">Aug 16 — 10K Race Day</span>
+        <span class="pace" style="color:#f97316">6:50/km</span>
+      </div>`;
       const weekDate = new Date(w.date);
-      const isCurrent = today >= weekDate && today < new Date(weekDate.getTime() + 7*24*60*60*1000);
-      return `<div class="week-row ${w.deload ? 'deload' : ''} ${isCurrent ? 'current' : ''}">
+      const isCurrent = now >= weekDate && now < new Date(weekDate.getTime() + 7*24*60*60*1000);
+      return `<div class="week-row ${w.deload?'deload':''} ${isCurrent?'current':''}">
         <span class="wk">W${w.week}</span>
-        <span class="session-name">${w.session}${w.deload ? ' 🔵' : ''}</span>
-        <span class="pace">${w.pace_per_rep || w.pace_per_km_equiv || ''}</span>
+        <span class="session-name">${w.session}${w.deload?' 🔵':''}</span>
+        <span class="pace">${w.pace_per_rep||w.pace_per_km_equiv||''}</span>
       </div>`;
     }).join('');
   }
-
-  loadToday();
+  window.loadPlan = loadPlan;
 </script>
 </body>
 </html>

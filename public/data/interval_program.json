@@ -1,0 +1,186 @@
+{
+  "race": {
+    "name": "Asics META Time Trials Thailand 2026",
+    "distance_km": 10,
+    "date": "2026-08-16",
+    "location": "Bangkok",
+    "target_pace_per_km": "6:50",
+    "target_finish": "68:20",
+    "splits": {
+      "1k": "6:50",
+      "5k": "34:10",
+      "10k": "68:20"
+    }
+  },
+  "program_start_date": "2026-05-07",
+  "weeks": [
+    {
+      "week": 1,
+      "date": "2026-05-07",
+      "phase": "base_400",
+      "session": "10 x 400m",
+      "pace_per_rep": "2:44",
+      "pace_per_km_equiv": "6:50",
+      "rest_seconds": 90,
+      "shoe": "Superblast 2"
+    },
+    {
+      "week": 2,
+      "date": "2026-05-14",
+      "phase": "base_400",
+      "session": "10 x 400m",
+      "pace_per_rep": "2:42",
+      "pace_per_km_equiv": "6:45",
+      "rest_seconds": 90,
+      "shoe": "Megablast"
+    },
+    {
+      "week": 3,
+      "date": "2026-05-21",
+      "phase": "base_400",
+      "session": "12 x 400m",
+      "pace_per_rep": "2:42",
+      "pace_per_km_equiv": "6:45",
+      "rest_seconds": 90,
+      "shoe": "Superblast 2"
+    },
+    {
+      "week": 4,
+      "date": "2026-05-28",
+      "phase": "deload",
+      "session": "6 x 400m",
+      "pace_per_rep": "2:44",
+      "pace_per_km_equiv": "6:50",
+      "rest_seconds": 90,
+      "deload": true,
+      "shoe": "Megablast"
+    },
+    {
+      "week": 5,
+      "date": "2026-06-04",
+      "phase": "base_400",
+      "session": "12 x 400m",
+      "pace_per_rep": "2:40",
+      "pace_per_km_equiv": "6:40",
+      "rest_seconds": 75,
+      "shoe": "Superblast 2"
+    },
+    {
+      "week": 6,
+      "date": "2026-06-11",
+      "phase": "intro_800",
+      "session": "6 x 800m",
+      "pace_per_rep": "5:32",
+      "pace_per_km_equiv": "6:55",
+      "rest_seconds": 120,
+      "shoe": "Megablast"
+    },
+    {
+      "week": 7,
+      "date": "2026-06-18",
+      "phase": "intro_800",
+      "session": "12 x 400m",
+      "pace_per_rep": "2:40",
+      "pace_per_km_equiv": "6:40",
+      "rest_seconds": 75,
+      "shoe": "Superblast 2"
+    },
+    {
+      "week": 8,
+      "date": "2026-06-25",
+      "phase": "deload",
+      "session": "4 x 800m",
+      "pace_per_rep": "5:36",
+      "pace_per_km_equiv": "7:00",
+      "rest_seconds": 120,
+      "deload": true,
+      "shoe": "Megablast"
+    },
+    {
+      "week": 9,
+      "date": "2026-07-02",
+      "phase": "intro_800",
+      "session": "7 x 800m",
+      "pace_per_rep": "5:28",
+      "pace_per_km_equiv": "6:50",
+      "rest_seconds": 120,
+      "shoe": "Megablast",
+      "notes": "Race pace simulation"
+    },
+    {
+      "week": 10,
+      "date": "2026-07-09",
+      "phase": "intro_800",
+      "session": "12 x 400m",
+      "pace_per_rep": "2:38",
+      "pace_per_km_equiv": "6:35",
+      "rest_seconds": 75,
+      "shoe": "Superblast 2"
+    },
+    {
+      "week": 11,
+      "date": "2026-07-16",
+      "phase": "race_specific",
+      "session": "5 x 1000m",
+      "pace_per_rep": "6:50",
+      "pace_per_km_equiv": "6:50",
+      "rest_seconds": 120,
+      "shoe": "Megablast"
+    },
+    {
+      "week": 12,
+      "date": "2026-07-23",
+      "phase": "race_specific",
+      "session": "8 x 800m",
+      "pace_per_rep": "5:24",
+      "pace_per_km_equiv": "6:45",
+      "rest_seconds": 90,
+      "shoe": "Superblast 2",
+      "notes": "Saturday: 5K time trial @ 6:50/km — fitness check"
+    },
+    {
+      "week": 13,
+      "date": "2026-07-30",
+      "phase": "race_specific",
+      "session": "4 x 1500m",
+      "pace_per_rep": "6:50",
+      "pace_per_km_equiv": "6:50",
+      "rest_seconds": 150,
+      "shoe": "Megablast",
+      "notes": "Final long-rep session"
+    },
+    {
+      "week": 14,
+      "date": "2026-08-06",
+      "phase": "taper",
+      "session": "6 x 400m + 4 strides",
+      "pace_per_rep": "2:38",
+      "pace_per_km_equiv": "6:35",
+      "deload": true,
+      "shoe": "Superblast 2"
+    },
+    {
+      "week": 15,
+      "date": "2026-08-13",
+      "phase": "race_week",
+      "session": "3 x 400m + 4 strides",
+      "pace_per_rep": "2:38",
+      "deload": true,
+      "shoe": "Race shoes",
+      "notes": "Carb load Fri-Sat. Hydrate. Sleep 8h+."
+    },
+    {
+      "week": "RACE",
+      "date": "2026-08-16",
+      "phase": "race_day",
+      "session": "10K race",
+      "pace_per_km": "6:50",
+      "splits": {"1k": "6:50", "5k": "34:10", "10k": "68:20"},
+      "pacing_strategy": [
+        "KM 1-3: 6:50-6:55 (controlled)",
+        "KM 4-7: lock 6:50 (the grind)",
+        "KM 8-10: 6:45 if legs hold"
+      ]
+    }
+  ]
+}
